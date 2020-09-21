@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+	<title> Hjem </title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/stylesheet.css">
+	<link rel="icon" href="https://cdn.discordapp.com/emojis/743902531541008545.png">
+</head>
+<body>
+<div class="navbar">
+<center>
+<p>Jonas Vestgøte Flakk</p>
+  <a href="file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/index.html">Hjem</a>
+  <a href="file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/om%20meg/om%20meg.html">Om meg</a>
+  <div class="dropdown">
+    <button class="dropbtn">Kreativt ▼ 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/Foto/foto.html">Foto</a>
+      <a href="file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/photoshop/photoshop.html">Photoshop</a>
+      <a href="https://www.youtube.com/channel/UCLQA65qYq-9nRMsp4EmwH2w">Youtube</a>
+    </div>
+  </div> 
+  </center>
+</div>
+<div class="header">
+	<center>
+	  <h1 class="pog"> Jonas Vestgøte Flakk</h1>
+    </center>
+</div>
+<div class="col-10">
+<center>
+	<button class="button button2"onclick="location.href='file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/passordsamling/passordsamling.html'" type="button"> Passordsamling </button> 
+</center>
+</div>
+<div class="col-11">
+<p> Om denne siden </p>
+<center>
+<strong class="medium"> Laget med impulsive tanker og et rotete dokument<br><br> </strong>
+<strong class="medium"> Lærte meg alt underveis så det er mye som bare flyter rundt og kanskje ikke er brukt.<br><br></strong>
+<strong class="medium"> Tenker å starte på nytt når jeg kan litt mer, slik at jeg får et bedre system med stilark og struktur i det hele tatt.</strong>
+</center>
+</div>
+<div class="col-12">
+	 <!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+    <div class="numbertext">1 / 4</div>
+    <img src="img1.jpg" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 4</div>
+    <img src="img2.jpg" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 4</div>
+    <img src="img3.jpg" style="width:100%">
+    <div class="text"></div>
+  </div>
+  
+   <div class="mySlides fade">
+    <div class="numbertext">4 / 4</div>
+    <img src="img4.jpg" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+</div> 
+</div>
+<footer>
+	<div class="footer">
+	<center>
+	<h1> haha idek</h1><br>
+		<div class="col-3">
+		<a href="https://twitter.com/traagnet" target="_blank">
+		<img src="Twitter.png" alt="twitter" width="75%">
+		</a>
+		</div>
+		<div class="col-4">
+		<a href="https://www.reddit.com/u/tragnet" target="_blank">
+		<img src="Reddit.png" alt="reddit" width="75%">
+		</a>
+		</div>
+		<div class="col-5">
+		<a href="https://www.facebook.com/profile.php?id=100005281808608" target="_blank">
+		<img src="Facebook.png" alt="facebook" width="75%">
+		</a>
+		</div>
+		<div class="col-6">
+		<a href="https://www.youtube.com/channel/UCLQA65qYq-9nRMsp4EmwH2w" target="_blank">
+		<img src="Youtube.png" alt="youtube" width="75%">
+		</a>
+		</div>
+		<div class="col-7">
+		<a href="https://www.twitch.tv/tragnet" target="_blank">
+		<img src="Twitch.png" alt="twitch" width="75%">
+		</a>
+		</div>
+		</center>
+	<p>© Jonas Vestgøte Flakk - 2020</p>
+	</div>
+</footer>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>

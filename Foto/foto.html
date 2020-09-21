@@ -1,0 +1,132 @@
+<html>
+<head>
+	<title> Foto </title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href=file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/stylesheet.css>
+	<link rel="icon" href="https://cdn.discordapp.com/emojis/743902531541008545.png">
+<script>
+function imageZoom(imgID, resultID) {
+  var img, lens, result, cx, cy;
+  img = document.getElementById(imgID);
+  result = document.getElementById(resultID);
+  /*create lens:*/
+  lens = document.createElement("DIV");
+  lens.setAttribute("class", "img-zoom-lens");
+  /*insert lens:*/
+  img.parentElement.insertBefore(lens, img);
+  /*calculate the ratio between result DIV and lens:*/
+  cx = result.offsetWidth / lens.offsetWidth;
+  cy = result.offsetHeight / lens.offsetHeight;
+  /*set background properties for the result DIV:*/
+  result.style.backgroundImage = "url('" + img.src + "')";
+  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+  /*execute a function when someone moves the cursor over the image, or the lens:*/
+  lens.addEventListener("mousemove", moveLens);
+  img.addEventListener("mousemove", moveLens);
+  /*and also for touch screens:*/
+  lens.addEventListener("touchmove", moveLens);
+  img.addEventListener("touchmove", moveLens);
+  function moveLens(e) {
+    var pos, x, y;
+    /*prevent any other actions that may occur when moving over the image:*/
+    e.preventDefault();
+    /*get the cursor's x and y positions:*/
+    pos = getCursorPos(e);
+    /*calculate the position of the lens:*/
+    x = pos.x - (lens.offsetWidth / 2);
+    y = pos.y - (lens.offsetHeight / 2);
+    /*prevent the lens from being positioned outside the image:*/
+    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+    if (x < 0) {x = 0;}
+    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+    if (y < 0) {y = 0;}
+    /*set the position of the lens:*/
+    lens.style.left = x + "px";
+    lens.style.top = y + "px";
+    /*display what the lens "sees":*/
+    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /*get the x and y positions of the image:*/
+    a = img.getBoundingClientRect();
+    /*calculate the cursor's x and y coordinates, relative to the image:*/
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /*consider any page scrolling:*/
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+}
+</script>
+</head>
+<body>
+<div class="navbar">
+<center>
+<p>Jonas Vestgøte Flakk</p>
+  <a href="file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/index.html">Hjem</a>
+  <a href="file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/om%20meg/om%20meg.html">Om meg</a>
+  <div class="dropdown">
+    <button class="dropbtn">Kreativt ▼ 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/Foto/foto.html">Foto</a>
+      <a href="file:///C:/Users/jflak/OneDrive%20-%20Tr%C3%B8ndelag%20fylkeskommune/Skole/web/photoshop/photoshop.html">Photoshop</a>
+      <a href="https://www.youtube.com/channel/UCLQA65qYq-9nRMsp4EmwH2w">Youtube</a>
+    </div>
+  </div> 
+  </center>
+</div>
+<div class="header">
+	<center>
+	<h1 class="pog">
+Fotogalleri
+	</h1>
+	</center>
+</div>
+<center>
+<div class="col-3">
+<div class="img-zoom-container">
+  <img id="myimage1" src="img1.jpg" width="100%" height="240">
+  <div id="myresult1" class="img-zoom-result"></div>
+</div>
+</div>
+<div class="col-4">
+<div class="img-zoom-container">
+  <img id="myimage2" src="img2.jpg" width="100%" height="240">
+  <div id="myresult2" class="img-zoom-result"></div>
+</div>
+</div>
+<div class="col-5">
+<div class="img-zoom-container">
+  <img id="myimage3" src="img3.jpg" width="100%" height="240">
+  <div id="myresult3" class="img-zoom-result"></div>
+</div>
+</div>
+<div class="col-6">
+<div class="img-zoom-container">
+  <img id="myimage4" src="img4.jpg" width="100%" height="240">
+  <div id="myresult4" class="img-zoom-result"></div>
+</div>
+</div>
+<div class="col-7">
+<div class="img-zoom-container">
+  <img id="myimage5" src="img5.jpg" width="100%" height="240">
+  <div id="myresult5" class="img-zoom-result"></div>
+</div>
+</div>
+<p>⠀<p>
+<script>
+// Initiate zoom effect:
+imageZoom("myimage1", "myresult1");
+imageZoom("myimage2", "myresult2");
+imageZoom("myimage3", "myresult3");
+imageZoom("myimage4", "myresult4");
+imageZoom("myimage5", "myresult5");
+</script>
+</center>
+</body>
+</html>
