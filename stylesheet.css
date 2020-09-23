@@ -126,6 +126,7 @@ p.avsnitt {
 	font-family: Arial, Sans-serif;
 	color: black;
 	background-color: white;
+	display: inline-block;
 }
 div.pink {
   width: 100%;
