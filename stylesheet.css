@@ -42,6 +42,7 @@ footer {
 .header {
   border: 1px #03fcf4;
   padding: 10px;
+  color: Fuchsia;
 }
 
 .row::after {
